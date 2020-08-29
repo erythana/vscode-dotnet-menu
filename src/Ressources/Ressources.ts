@@ -8,7 +8,7 @@ export module Ressources
     }
 
     export module Arguments{
-        export const dotnetTemplateString = "dotnet new -l";
+        export const dotnetListTemplates = "new -l";
         export const conditionsMet = "vscode-dotnet-menu:conditionsMet";
     }
 
