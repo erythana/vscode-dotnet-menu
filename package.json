@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-dotnet-menu.EnumerateTemplates"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": 
@@ -18,18 +18,26 @@
 		"commands": [
 				{
 				  "command": "vscode-dotnet-menu.EnumerateTemplates",
-				  "title": "Say Hello"
+				  "title": "Reload DOTNET Templates"
+				},
+				{
+					"command": "vscode-dotnet-menu.MenuCommand",
+					"title": "Do stuff in the Explorer menu"			
 				}
-			  ]
-			,
+			  ],
 		"menus": 
 		{
+			"commandPalette": [
+				{
+					"command": "vscode-dotnet-menu.EnumerateTemplates",
+					"when": "vscode-dotnet-menu:conditionsMet == false"
+				}
+			],
 			"explorer/context": [
 			{
-				"command": "vscode-dotnet-menu.EnumerateTemplates",
-				"title": "Hello World",
+				"command": "vscode-dotnet-menu.MenuCommand",
 				"group": "z_commands",
-				"when": "explorerResourceIsFolder == true"
+				"when": "vscode-dotnet-menu:conditionsMet  == true"
 			}]
 		}	
 	},
