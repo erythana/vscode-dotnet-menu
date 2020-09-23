@@ -5,7 +5,6 @@ export class ProjectTemplate {
         this.language = language;
         this.tag = tag;
     }
-
     templateName: string;
     shortName: string;
     language: string;
