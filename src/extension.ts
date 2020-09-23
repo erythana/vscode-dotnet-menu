@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 	Logger.logToConsole(`Loaded extension ${extensionName}`, LoggingModes.information);
 	
 	let dotnetHelper = new DotnetHelper(Ressources.Arguments.dotnetListTemplates);
-
+	
 	//Register Commands
 	let enumerateCommand = vscode.commands.registerCommand(Ressources.Commands.enumerateCommand, () => dotnetHelper = new DotnetHelper(Ressources.Arguments.dotnetListTemplates));
 	let menuCommand = vscode.commands.registerCommand(Ressources.Commands.menuCommand, () => {});//TODO: Only temporary, waiting for VSCode Devs to implement the menu item stuff at start of Oct. 2020
