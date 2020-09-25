@@ -14,12 +14,13 @@ export class DotnetHelper {
 			}).catch((message) => {
                 Logger.logToConsole(`${message}${Ressources.Messages.dotnetNotinstalled}`, LoggingModes.error);
                 this.dotnetTemplates;
-			});
+            });
     }
 
     //#region Properties
 
     public dotnetTemplates: ProjectTemplate[] = [];
+    readonly templateCount: number = this.dotnetTemplates.length;
 
     //#endregion 
     
@@ -84,7 +85,7 @@ export class DotnetHelper {
         headerArray.forEach(x => 
             {
                 x = x.trim();
-                headerIndexes.push(headerString.indexOf(x))
+                headerIndexes.push(headerString.indexOf(x));
             });
 
         return headerIndexes;
